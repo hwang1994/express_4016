@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const { exec } = require("child_process");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -20,7 +21,7 @@ app.get('/foo', function(req, res, next) {
     res.send('bar');
 });
 app.post('/hello', (req, res) => {
-    res.send(req.body.name);
+    res.send('Hello ' + req.body.name + '!');
 });
 
 module.exports = app;
