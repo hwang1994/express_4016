@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-4016-deployment
+  namespace: hwang268
+  labels:
+    app: express-4016
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: express-4016
+  template:
+    metadata:
+      labels:
+        app: express-4016
+    spec:
+      containers:
+      - name: express-4016
+        image: hwang1994/express_4016:latest
+        envFrom:
+          - configMapRef:
+              name: express-4016-config
+          - secretRef:
+              name: express-4016-secret
+        ports:
+        - containerPort: 8080
+        env:
+        - name: envValue
+          value: "environmentSnake"

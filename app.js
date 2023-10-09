@@ -25,4 +25,14 @@ app.get('/kill', (req, res) => {
     process.exit(1);
 });
 
+app.get('/configValue', (req, res) => {
+    res.send(process.env.configValue);
+});
+app.get('/secretValue', (req, res) => {
+    res.send(process.env.secretValue);
+});
+app.get('/envValue', (req, res) => {
+    res.send(process.env.envValue);
+});
+
 module.exports = app;
