@@ -1,0 +1,14 @@
+Repository: https://github.com/hwang1994/express_4016
+
+Comments:
+I have to create the namespace first before applying my folder for it to work on my side
+kubectl apply -f express_4016_namespace.yaml
+kubectl apply -f kubernetes
+
+I can also apply files 1 by 1 in the folder in the following order:
+kubectl apply -f express_4016_namespace.yaml
+kubectl apply -f express_4016_config.yaml
+kubectl apply -f express_4016_secret.yaml
+kubectl apply -f express_4016_deployment.yaml
+kubectl apply -f express_4016_service.yaml
+

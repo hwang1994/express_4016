@@ -4,7 +4,7 @@ metadata:
   name: express-4016-service
   namespace: hwang268
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: express-4016
   ports:
@@ -12,4 +12,3 @@ spec:
     port: 8080
     protocol: TCP
     targetPort: 8080
-    nodePort: 30000

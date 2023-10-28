@@ -4,4 +4,4 @@ metadata:
   name: express-4016-config
   namespace: hwang268
 data:
-  configValue: "snake"
+  configValue: "13"

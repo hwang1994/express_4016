@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: express-4016-deployment
   namespace: hwang268
@@ -25,6 +25,18 @@ spec:
               name: express-4016-secret
         ports:
         - containerPort: 8080
+        resources:
+          limits:
+            cpu: 200m
+          requests:
+            cpu: 200m
         env:
         - name: envValue
-          value: "environmentSnake"
+          value: "14"
+        volumeMounts:
+        - name: string-volume
+          mountPath: /app/assignment3
+      volumes:
+      - name: string-volume
+        persistentVolumeClaim:
+          claimName: express-4016-pvc

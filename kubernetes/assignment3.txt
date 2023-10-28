@@ -1,0 +1,10 @@
+Repository: https://github.com/hwang1994/express_4016
+
+Comments:
+I have to create the namespace first before applying my folder for it to work on my side
+kubectl apply -f express_4016_namespace.yaml
+kubectl apply -f kubernetes
+
+The busywait endpoint does scale down but it takes longer than 3 minutes
+I use the envValue from assignment 2 (the deployment file) for easy testing to see which number to pass in my function will jack up the CPU usage.
+User may change the envValue to increase/decrease CPU load
