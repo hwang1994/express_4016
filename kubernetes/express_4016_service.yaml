@@ -9,6 +9,6 @@ spec:
     app: express-4016
   ports:
   - name: http
-    port: 8080
+    port: 30000
     protocol: TCP
-    targetPort: 8080
+    targetPort: 30000

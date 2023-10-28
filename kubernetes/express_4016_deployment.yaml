@@ -24,7 +24,7 @@ spec:
           - secretRef:
               name: express-4016-secret
         ports:
-        - containerPort: 8080
+        - containerPort: 30000
         resources:
           limits:
             cpu: 200m

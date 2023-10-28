@@ -10,4 +10,4 @@ spec:
   apiVersion: apps/v1
   kind: StatefulSet
   name: express-4016-deployment
- targetCPUUtilizationPercentage: 90
+ targetCPUUtilizationPercentage: 30
