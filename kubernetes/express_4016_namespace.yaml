@@ -4,3 +4,10 @@ metadata:
   name: hwang268
   labels:
     name: hwang268
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: probe
+  labels:
+    name: probe

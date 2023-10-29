@@ -63,5 +63,8 @@ app.get('/busywait', (req, res) => {
 	};
     res.send('busywait result ' + result);
 });
+app.get('/isAlive', function(req, res, next) {
+    res.send('true');
+});
 
 module.exports = app;

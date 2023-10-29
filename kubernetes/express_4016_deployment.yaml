@@ -25,6 +25,13 @@ spec:
               name: express-4016-secret
         ports:
         - containerPort: 30000
+        readinessProbe:
+          httpGet:
+            path: /isAlive
+            port: 30010
+            host: "localhost"
+          initialDelaySeconds: 10
+          periodSeconds: 5
         resources:
           limits:
             cpu: 200m
@@ -40,3 +47,26 @@ spec:
       - name: string-volume
         persistentVolumeClaim:
           claimName: express-4016-pvc
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-4016-deployment
+  namespace: probe
+  labels:
+    app: express-4016
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: express-4016
+  template:
+    metadata:
+      labels:
+        app: express-4016
+    spec:
+      containers:
+      - name: express-4016
+        image: hwang1994/express_4016:probe
+        ports:
+        - containerPort: 8080
